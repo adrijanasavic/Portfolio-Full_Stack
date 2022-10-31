@@ -8,6 +8,7 @@ const PORT = process.env.PORT;
 const MONGO_URL = process.env.MONGO_URL;
 
 const Home = require("./models/homeModel");
+const Users = require("./models/userModel");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -39,6 +40,19 @@ mongoose.connect(MONGO_URL, (err) => {
 //     });
 //     newData.save();
 // });
+
+app.post("/login", (req, res) => {
+  const reqBody = req.body;
+
+  const foundUser = Users.findOne(reqBody, (err, data) => {
+    if (err) {
+      const errorMsg = `Error on getting user from DB: ${err}`;
+      res.status(416).send(errorMsg);
+      return;
+    }
+    res.send(data ? data : "User not found.");
+  });
+});
 
 app.get("/", (req, res) => {
   Home.find({})
