@@ -1,9 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
+import LoginService from "../../services/loginService";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isValidForm, setIsValidForm] = useState(true);
+  const navigate = useNavigate();
+  const [message, setMessage] = useState("")
+
+  const onUsernameChange = (e) => setUsername(e.target.value);
+  const onPasswordChange = (e) => setPassword(e.target.value);
+
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      setIsValidForm(false);
+      return;
+    }
+    setIsValidForm(true);
+
+    let body = { username: username, password: password };
+
+    LoginService.login(body)
+      .then((res) => {
+        if (res.status === 200) {
+          console.log(res);
+          localStorage.setItem("user", JSON.stringify(res.data));
+          navigate("/dashboard")
+        } else {
+        setMessage("User not found!")
+        console.log("User not found");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div className="box">
+    <form className="box" onSubmit={onSubmitForm} method="post">
       <div className="box__form">
         <h2>Login</h2>
         <div className="box__form--input-box">
@@ -13,26 +50,29 @@ export default function Login() {
             name="username"
             placeholder=""
             required="required"
+            onInput={onUsernameChange}
           />
-          <span>Username</span>
+          <label htmlFor="usename">Username</label>
           <i></i>
         </div>
         <div className="box__form--input-box">
           <input
-            type="text"
+            type="password"
             id="password"
             name="password"
             placeholder=""
             required="required"
+            onInput={onPasswordChange}
           />
-          <span>Password</span>
+          <label htmlFor="password">Password</label>
           <i></i>
         </div>
         <div className="box__form--link">
-          <a href="#">Back to Home page</a>
+          <Link to="/">Back to Home page</Link>
         </div>
+        {message}
         <input type="submit" value={"Login"} />
       </div>
-    </div>
+    </form>
   );
 }

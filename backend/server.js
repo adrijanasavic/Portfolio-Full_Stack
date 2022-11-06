@@ -50,7 +50,11 @@ app.post("/login", (req, res) => {
       res.status(416).send(errorMsg);
       return;
     }
-    res.send(data ? data : "User not found.");
+    if (data?.username) {
+      res.send(data);
+    } else {
+      res.status(210).send("User not found")
+    }
   });
 });
 
