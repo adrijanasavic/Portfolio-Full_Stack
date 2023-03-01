@@ -84,7 +84,7 @@
   width: 85%;
   margin-left: 7%;
   border-radius: 60%;
-  background-image: url("./../assets/profilephoto.jpg");
+  background-image: url("./../../assets/profilephoto.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Typical from "react-typical";
-import cv from "./../pdf/Adrijana_Savic_CV.pdf";
+import cv from "./../../pdf/Adrijana_Savic_CV.pdf";
 import "./Home.css";
 
 function Home() {
