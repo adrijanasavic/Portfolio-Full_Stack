@@ -12,6 +12,7 @@
   height: 100px;
   padding: 0 1.5rem;
   position: fixed;
+  z-index: 100;
 
   @include breakpoint(md) {
     padding: 0 3rem;
@@ -29,7 +30,7 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    // z-index: 100;
+
 
     &__logo {
       font-size: 2rem;

@@ -2,7 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+
 const AboutMe = require("./models/aboutmeModel");
+const Projects = require("./models/projectsModel");
 const app = express();
 
 const PORT = process.env.PORT;
@@ -38,6 +40,38 @@ mongoose.connect(MONGO_URL, (err) => {
 //     });
 //     newData.save();
 // });
+
+
+// const data = [
+//   {
+//     title: "Drugi",
+//     description: "Web and Android developer",
+//     link: "xx",
+//     github: "An enthusiastic Web and Android developer with good attention to detail and strong will to learn new technologies.",
+//     skill: "xx",
+
+//   }
+// ];
+
+// data.forEach(el => {
+//     const newData = new Projects({
+//         title: el.title,
+//         description: el.description,
+//         link: el.link,
+//         github: el.github,
+//         skill: el.skill
+
+//     });
+//     newData.save();
+// });
+
+
+app.get("/projects", (req, res) => {
+  Projects.find({})
+    .then((item) => res.json(item))
+    .catch((err) => console.log(err));
+
+});
 
 app.get("/", (req, res) => {
   AboutMe.find({})

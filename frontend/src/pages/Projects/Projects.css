@@ -1,0 +1,73 @@
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+.container .card {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-bottom: 60px;
+}
+.container .card .card > div {
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.container .card .card-image {
+  width: 400px;
+  height: 250px;
+}
+.container .card .card-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+.container .card .card-text {
+  margin: -30px auto;
+  margin-bottom: -50px;
+  height: 300px;
+  width: 300px;
+  background-color: #1D1C20;
+  color: #fff;
+  padding: 20px;
+}
+.container .card .card-text .card-meal-type {
+  font-style: italic;
+}
+.container .card .card-text .card-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+.container .card .card-text .card-body {
+  font-size: 1.25rem;
+}
+.container .card .card-link {
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary);
+  color: #fff;
+  margin-left: auto;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .card .card-git {
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary);
+  color: #fff;
+  margin-right: auto;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -120px;
+  margin-left: 180px;
+}/*# sourceMappingURL=Projects.css.map */

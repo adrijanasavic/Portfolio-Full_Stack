@@ -4,6 +4,7 @@
   height: 100px;
   padding: 0 1.5rem;
   position: fixed;
+  z-index: 100;
   transition: 0.3s ease all;
 }
 @media (min-width: 930px) {
