@@ -21,7 +21,6 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
-  z-index: 100;
 }
 .header__content__logo {
   font-size: 2rem;

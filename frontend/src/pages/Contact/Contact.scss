@@ -1,7 +1,6 @@
 .contact {
-  position: relative;
-  padding-top: 150px;
-  z-index: 0;
+
+  padding-top: 130px;
 
   &-container {
     width: 20px;
@@ -44,10 +43,11 @@
 
         &-desc {
           color: var(--primary);
+          margin: 0 30px;
         }
 
         form {
-          margin-top: 20px;
+          margin: 20px;
 
           input {
             width: 100%;
@@ -73,6 +73,7 @@
             color: var(--primary);
             border-radius: 1rem;
             border: none;
+            margin-bottom: 10px;
           }
 
           .btn:hover {
@@ -103,7 +104,7 @@
 @media screen and (max-width: 480px) {
   .contact-container-wrapper {
     flex-direction: column;
-    margin-left: 60px;
+    margin-left: 10px;
 
     &-left-title {
       font-size: 30px;

@@ -79,7 +79,7 @@ function Contact() {
                   data-aos="fade-right"
                   data-aos-duration="700"
                 />
-                adrijana.work @gmail.com
+                adrijana.work@gmail.com
               </div>
               <div className="contact-container-wrapper-left-title-item">
                 <i

@@ -61,7 +61,7 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-          <Link to="/contact">
+          <Link to="/contact" onClick={menuToggleHandler}>
             <button>Contact</button>
           </Link>
         </nav>
