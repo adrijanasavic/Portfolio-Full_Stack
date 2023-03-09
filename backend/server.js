@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 const AboutMe = require("./models/aboutmeModel");
 const Projects = require("./models/projectsModel");
+const Qualifications = require("./models/qualificationsModel");
+
 const app = express();
 
 const PORT = process.env.PORT;
@@ -41,7 +43,6 @@ mongoose.connect(MONGO_URL, (err) => {
 //     newData.save();
 // });
 
-
 // const data = [
 //   {
 //     title: "Drugi",
@@ -66,11 +67,41 @@ mongoose.connect(MONGO_URL, (err) => {
 // });
 
 
+
+
+// const data = [
+//   {
+//     date: "2022 - Present",
+//     degree: "Master's of information technology",
+//     school:
+//       "Higher Education Technical School of Professional Studies in Novi Sad - VTSNS",
+//     description: "",
+//     keywords: [],
+//   },
+// ];
+
+// data.forEach(el => {
+//     const newData = new Qualifications({
+//         date: el.date,
+//         degree: el.degree,
+//         school: el.school,
+//         description: el.description,
+//         keywords: el.keywords
+
+//     });
+//     newData.save();
+//  });
+
+app.get("/qualifications", (req, res) => {
+  Qualifications.find({})
+    .then((item) => res.json(item))
+    .catch((err) => console.log(err));
+});
+
 app.get("/projects", (req, res) => {
   Projects.find({})
     .then((item) => res.json(item))
     .catch((err) => console.log(err));
-
 });
 
 app.get("/", (req, res) => {

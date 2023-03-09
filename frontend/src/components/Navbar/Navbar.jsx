@@ -46,11 +46,6 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={menuToggleHandler}>
-                About
-              </Link>
-            </li>
-            <li>
               <Link to="/qualifications" onClick={menuToggleHandler}>
                 Qualifications
               </Link>

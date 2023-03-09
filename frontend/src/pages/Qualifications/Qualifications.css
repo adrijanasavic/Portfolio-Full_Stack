@@ -1,0 +1,47 @@
+.education {
+  padding-top: 100px;
+}
+.education .edu_btn {
+  font-size: 1.5rem;
+  height: 60px;
+  padding: 1rem;
+  margin: 2rem 3rem 1rem;
+  background-color: var(--white);
+  color: var(--grey);
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.6rem;
+  box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24), 0 17px 50px 0 rgba(180, 180, 180, 0.19);
+}
+.education .edu_btn:hover {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 2rem 3rem 1rem;
+  background-color: var(--grey);
+  color: var(--white);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24), 0 17px 50px 0 rgba(180, 180, 180, 0.19);
+}
+.education .edu_btn2 {
+  font-size: 1.5rem;
+  height: 60px;
+  padding: 1rem;
+  margin: 2rem 3rem 1rem;
+  background-color: var(--primary);
+  color: var(--grey);
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.6rem;
+  box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24), 0 17px 50px 0 rgba(180, 180, 180, 0.19);
+}
+.education .edu_btn2:hover {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 2rem 3rem 1rem;
+  background-color: var(--grey);
+  color: var(--white);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24), 0 17px 50px 0 rgba(180, 180, 180, 0.19);
+}/*# sourceMappingURL=Qualifications.css.map */

@@ -5,3 +5,5 @@ npm i react-icons
 npm i emailjs-com
 npm install @reduxjs/toolkit react-redux
 npm i aos
+npm i react-vertical-timeline-component
+npm i jquery

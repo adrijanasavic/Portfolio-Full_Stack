@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Projects.css";
+
 export default function Projects() {
   const [data, setData] = useState([]);
   const client = axios.create({
@@ -16,9 +17,9 @@ export default function Projects() {
     <div className="container">
       {data.map((item, index) => {
         return (
-          <div className="card" id={index}  >
+          <div className="card" key={index}>
             <div className="card-image">
-              <img  data-aos="flip-left" src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/reactt2_1200x303.png?sfvrsn=3ddeaf3b_2" />
+              <img src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/reactt2_1200x303.png?sfvrsn=3ddeaf3b_2" />
             </div>
             <div className="card-text">
               <p className="card-meal-type">{item.skill}</p>
@@ -26,10 +27,25 @@ export default function Projects() {
               <p className="card-body">{item.description}</p>
             </div>
             <div class="card-link">
-            <a href={item.link} target="_blank" rel="noopener noreferrer" aria-label="Go to live site"><i className="fas fa-link" title="Go to live site" /></a>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Go to live site"
+              >
+                <i className="fas fa-link" title="Go to live site" />
+              </a>
             </div>
             <div class="card-git">
-            <a href={item.github} target="_blank" rel="noopener noreferrer" aria-label="Go to live github"> <i className="fab fa-github" title="Go to github" /></a>
+              <a
+                href={item.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Go to github"
+              >
+                {" "}
+                <i className="fab fa-github" title="Go to github" />
+              </a>
             </div>
           </div>
         );
