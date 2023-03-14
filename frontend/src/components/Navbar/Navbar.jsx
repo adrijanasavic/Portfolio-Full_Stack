@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 export default function Navbar() {
+  const user = useSelector((state) => state.userStore.user);
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   const [menuOpen, setMenuOpen] = useState(false);
   const [size, setSize] = useState({
     width: window.innerWidth,
@@ -33,9 +40,20 @@ export default function Navbar() {
     setMenuOpen((state) => !state);
   };
 
+  const userBtnLayout = () => {
+    return user.hasOwnProperty("username") ? (
+      <h2 className="header__content__logo">{user.username}</h2>
+    ) : (
+      <a href="/">
+        <h2 className="header__content__logo">AS</h2>
+      </a>
+    );
+  };
+
   return (
     <header className="header">
       <div className="header__content">
+        {userBtnLayout()}
         <nav
           className={`${"header__content__nav"} ${menuOpen ? "isMenu" : ""}`}
         >

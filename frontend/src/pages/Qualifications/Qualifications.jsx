@@ -26,10 +26,10 @@ function Qualifications() {
   return (
     <div className="education">
       <VerticalTimeline>
-        {data.map((element) => {
+        {data.map((element, index) => {
           return (
             <VerticalTimelineElement
-              key={element.key}
+              key={index}
               date={element.date}
               dateClassName="date"
               iconStyle={schoolIconStyles}
@@ -41,10 +41,17 @@ function Qualifications() {
               <h5 className="vertical-timeline-element-subtitle">
                 {element.school}
               </h5>
-              <p id="description">{element.description}</p>
+              <p>{element.description}</p>
               <h5 className="vertical-timeline-element-subtitle">
                 {element.keywords}
               </h5>
+              {element.pdf && <div>
+                <a href={element.pdf} download type="file"  target="_blank" rel="noopener noreferrer">
+                  <button className="edu_btn" rel="opener">
+                    View Resume
+                  </button>
+                </a>
+              </div>}
             </VerticalTimelineElement>
           );
         })}

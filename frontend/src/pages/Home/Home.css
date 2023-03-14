@@ -98,10 +98,10 @@
 }
 .home-container .profile-picture .cols-icon a i {
   margin: 0 4px;
-  color: var(--primary);
+  color: var(--white);
 }
 .home-container .profile-picture .cols-icon a i:hover {
-  color: var(--white);
+  color: var(--primary);
 }
 
 @media only screen and (max-width: 1200px) {

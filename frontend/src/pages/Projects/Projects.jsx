@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Projects.css";
+import { Link } from "react-router-dom";
 
 export default function Projects() {
   const [data, setData] = useState([]);
+  const [user, setUser] = useState(false);
+
   const client = axios.create({
     baseURL: "http://localhost:4000/projects",
   });
+
   useEffect(() => {
     client.get().then((response) => {
       setData(response.data);
+      showBtn();
     });
   }, []);
+
+  const showBtn = () => {
+    if (localStorage.hasOwnProperty("user")) {
+      setUser(true);
+    }
+  };
+  const deleteProject = async (id) => {
+    axios.delete(`/project/${id}`).then((res) => {
+      setData(res.data);
+    });
+  };
 
   return (
     <div className="container">
@@ -19,14 +35,18 @@ export default function Projects() {
         return (
           <div className="card" key={index}>
             <div className="card-image">
-              <img src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/reactt2_1200x303.png?sfvrsn=3ddeaf3b_2" />
+              {item.picture ? (
+                <img src={item.picture} />
+              ) : (
+                <img src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/reactt2_1200x303.png?sfvrsn=3ddeaf3b_2" />
+              )}
             </div>
             <div className="card-text">
-              <p className="card-meal-type">{item.skill}</p>
               <h2 className="card-title">{item.title}</h2>
+              <p className="card-meal-type">{item.skill}</p>
               <p className="card-body">{item.description}</p>
             </div>
-            <div class="card-link">
+            <div className="card-link">
               <a
                 href={item.link}
                 target="_blank"
@@ -36,7 +56,7 @@ export default function Projects() {
                 <i className="fas fa-link" title="Go to live site" />
               </a>
             </div>
-            <div class="card-git">
+            <div className="card-git">
               <a
                 href={item.github}
                 target="_blank"
@@ -47,6 +67,12 @@ export default function Projects() {
                 <i className="fab fa-github" title="Go to github" />
               </a>
             </div>
+            {user && (
+              <div className="">
+                <Link className="btn" to={`/project/${item._id}`}>Edit</Link>
+                <Link className="btn" onClick={() => deleteProject(item._id)}>Delete</Link>
+              </div>
+            )}
           </div>
         );
       })}

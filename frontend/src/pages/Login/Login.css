@@ -1,0 +1,139 @@
+.box {
+  position: relative;
+  width: 380px;
+  height: 900px;
+  background-color: var(--black);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin: 0px auto;
+}
+.box__form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+  background-color: var(--grey);
+  z-index: 1;
+  padding: 5px 40px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.box__form h2 {
+  color: var(--primary);
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.box__form--input-box {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+  min-height: 50px;
+}
+.box__form--input-box input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+.box__form--input-box input:valid ~ label,
+.box__form--input-box input:focus ~ label {
+  color: var(--white);
+  font-size: 17px;
+  transform: translateX(0px) translateY(-34px);
+}
+.box__form--input-box label {
+  position: absolute;
+  left: 0;
+  padding: 20px 0px 10px;
+  font-size: 20px;
+  color: var(--secondary);
+  pointer-events: none;
+  transition: 0.5s;
+}
+.box__form--input-box i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 1;
+}
+.box__form--input-box input:valid ~ i,
+.box__form--input-box input:focus ~ i {
+  height: 44px;
+}
+.box__form--link {
+  margin: 10px 0;
+}
+.box__form--link a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.box__form--link a:hover {
+  color: var(--secondary);
+}
+.box__form input[type=submit] {
+  border: none;
+  outline: none;
+  background-color: var(--primary);
+  padding: 10px 25px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: 17px;
+  cursor: pointer;
+}
+.box__form input[type=submit]:active {
+  opacity: 0.8;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #9fe89f, #9fe89f);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, var(--primary), var(--primary));
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=login.css.map */

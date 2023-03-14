@@ -6,6 +6,7 @@ const projectsSchema = new mongoose.Schema({
   link: String,
   github: String,
   skill: String,
+  picture: String,
 });
 
 const Projects = mongoose.model("projects", projectsSchema);

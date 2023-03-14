@@ -5,7 +5,8 @@ const qualificationsSchema = new mongoose.Schema({
     degree: String,
     school: String,
     description: String,
-    keywords: Array
+    keywords: String,
+    pdf:String
 });
 
 const Qualifications = mongoose.model("qualifications", qualificationsSchema);

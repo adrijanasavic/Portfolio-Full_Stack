@@ -3,7 +3,9 @@ import axios from "axios";
 import Typical from "react-typical";
 import cv from "./../../pdf/Adrijana_Savic_CV.pdf";
 import "./Home.css";
-
+import Projects from "../Projects/Projects";
+import Qualifications from "../Qualifications/Qualifications";
+import Contact from "../Contact/Contact"
 function Home() {
   const [data, setData] = useState([]);
 
@@ -58,8 +60,8 @@ function Home() {
                 </div>
 
                 <div className="profile-details-cv">
-                  <a href={cv} download="CV_Adrijana_Savić.pdf">
-                    <button className=" btn-get">Get Resume</button>
+                  <a href={cv} target="_blank" rel="noopener noreferrer">
+                    <button className=" btn-get">View Resume</button>
                   </a>
                 </div>
               </div>
@@ -86,6 +88,9 @@ function Home() {
           </div>
         );
       })}
+      {/* <Qualifications/>
+      <Projects />
+      <Contact/> */}
     </div>
   );
 }

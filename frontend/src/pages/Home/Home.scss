@@ -110,12 +110,13 @@
         margin: 20px 10px;
 
         a {
+         
           i {
             margin: 0 4px;
-            color: var(--primary);
+            color: var(--white);
           }
           i:hover {
-            color: var(--white);
+            color: var(--primary);
           }
         }
       }

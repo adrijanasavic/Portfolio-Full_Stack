@@ -97,7 +97,7 @@ function Contact() {
             onSubmit={(event) => onSubmitForm(event)}
           >
             <p className="contact-container-wrapper-right-desc">
-              <h3>If you have job offers feel free to email me.</h3>
+              If you have job offers feel free to email me.
             </p>
             <form ref={formRef} onSubmit={handleSubmit}>
               <input
