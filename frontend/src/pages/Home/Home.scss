@@ -4,6 +4,7 @@
   justify-content: space-between;
   min-height: 740px;
   object-fit: cover;
+  font-size: 1.5rem;
 
   .profile-container {
     display: flex;
@@ -24,7 +25,6 @@
     &-details {
       &-name {
         margin-top: 50px;
-        font-size: 24px;
         font-family: "Poppins SemiBold";
 
         .primary-text {
@@ -44,12 +44,10 @@
 
         h1 {
           height: 60px;
-          font-size: 30px;
           font-family: "cursive";
         }
 
         .profile-role-tagline {
-          font-size: 19px;
           margin: 0;
           font-family: "Poppins Light";
         }
@@ -140,7 +138,6 @@
   }
 
   .profile-details-name {
-    font-size: 20px;
     margin-top: 20px;
   }
 

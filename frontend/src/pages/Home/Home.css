@@ -5,6 +5,7 @@
   min-height: 740px;
   -o-object-fit: cover;
      object-fit: cover;
+  font-size: 1.5rem;
 }
 .home-container .profile-container {
   display: flex;
@@ -24,7 +25,6 @@
 }
 .home-container .profile-details-name {
   margin-top: 50px;
-  font-size: 24px;
   font-family: "Poppins SemiBold";
 }
 .home-container .profile-details-name .primary-text {
@@ -41,11 +41,9 @@
 }
 .home-container .profile-details-role h1 {
   height: 60px;
-  font-size: 30px;
   font-family: "cursive";
 }
 .home-container .profile-details-role .profile-role-tagline {
-  font-size: 19px;
   margin: 0;
   font-family: "Poppins Light";
 }
@@ -117,7 +115,6 @@
     padding: 40px;
   }
   .profile-details-name {
-    font-size: 20px;
     margin-top: 20px;
   }
   .profile-details-role .primary-text {

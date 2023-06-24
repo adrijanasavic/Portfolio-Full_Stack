@@ -6,6 +6,7 @@ import "./Home.css";
 import Projects from "../Projects/Projects";
 import Qualifications from "../Qualifications/Qualifications";
 import Contact from "../Contact/Contact"
+
 function Home() {
   const [data, setData] = useState([]);
 
@@ -44,9 +45,9 @@ function Home() {
                       <Typical
                         loop={Infinity}
                         steps={[
-                          "Web Developer 💻",
+                          "Web Developer ",
                           1000,
-                          "Adroid Developer 📳",
+                          "Adroid Developer ",
                           1000,
                         ]}
                       />

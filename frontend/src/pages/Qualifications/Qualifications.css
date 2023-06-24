@@ -1,22 +1,24 @@
 .education {
   padding-top: 100px;
+  font-size: 1.2rem;
 }
 .education .edu_btn {
   font-size: 1.5rem;
   height: 60px;
   padding: 1rem;
-  margin: 2rem 3rem 1rem;
+  margin: 1rem;
   background-color: var(--primary);
   color: var(--grey);
   border-radius: 1rem;
   border: none;
   font-size: 1rem;
+  align-items: center;
   box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24), 0 17px 50px 0 rgba(180, 180, 180, 0.19);
 }
 .education .edu_btn:hover {
   font-size: 1rem;
   padding: 1rem;
-  margin: 2rem 3rem 1rem;
+  margin: 1rem;
   background-color: var(--grey);
   color: var(--white);
   border-radius: 1rem;

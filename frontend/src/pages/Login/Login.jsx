@@ -6,28 +6,33 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/userSlice";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+
   const [isValidForm, setIsValidForm] = useState(true);
   const navigate = useNavigate();
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("hidden")
 
-  const onUsernameChange = (e) => setUsername(e.target.value);
-  const onPasswordChange = (e) => setPassword(e.target.value);
+  const [userCredentials, setUserCredentials] = useState({
+    username: null,
+    password:null
+ })
 
-  const dispatch = useDispatch();
   
+  function handleChange(e){
+    let copyUserCredentials = { ...userCredentials }
+    copyUserCredentials[e.target.name] = e.target.value;
+    setUserCredentials(copyUserCredentials)
+  }
   const onSubmitForm = (e) => {
     e.preventDefault();
-    if (!username || !password) {
+    if (!userCredentials.username || !userCredentials.password) {
       setIsValidForm(false);
       return;
     }
     setIsValidForm(true);
 
-    let body = { username: username, password: password };
 
-    LoginService.login(body)
+    LoginService.login(userCredentials)
       .then((res) => {
         if (res.status === 200) {
           console.log(res);
@@ -35,7 +40,7 @@ export default function Login() {
           dispatch(setUser(res.data));
           navigate("/dashboard")
         } else {
-        setMessage("User not found!")
+        setMessage("visible")
         console.log("User not found");
         }
       })
@@ -55,7 +60,7 @@ export default function Login() {
             name="username"
             placeholder=""
             required="required"
-            onInput={onUsernameChange}
+            onChange={((e) => { { handleChange(e) } })}
           />
           <label htmlFor="usename">Username</label>
           <i></i>
@@ -67,7 +72,7 @@ export default function Login() {
             name="password"
             placeholder=""
             required="required"
-            onInput={onPasswordChange}
+            onChange={((e) => { { handleChange(e) } })}
           />
           <label htmlFor="password">Password</label>
           <i></i>
@@ -75,7 +80,7 @@ export default function Login() {
         <div className="box__form--link">
           <Link to="/">Back to Home page</Link>
         </div>
-        {message}
+        <p style={{ visibility: message }}>User not found</p>
         <input type="submit" value={"SEND"} />
       </div>
     </form>

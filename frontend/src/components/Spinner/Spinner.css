@@ -1,0 +1,8 @@
+.loader {
+  background: url("./load.gif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 1000px;
+  width: 100%;
+}/*# sourceMappingURL=Spinner.css.map */

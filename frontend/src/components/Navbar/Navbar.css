@@ -5,6 +5,7 @@
   padding: 0 1.5rem;
   position: fixed;
   z-index: 100;
+  font-size: 1.5rem;
   transition: 0.3s ease all;
 }
 @media (min-width: 930px) {
@@ -24,7 +25,6 @@
   position: relative;
 }
 .header__content__logo {
-  font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
   color: var(--white);
@@ -100,12 +100,12 @@
   outline: none;
   padding: 0.75rem 1.25rem;
   border-radius: 12px;
-  font-size: 1rem;
   font-family: inherit;
   background: var(--primary);
   color: var(--black);
   border: 1px solid transparent;
   transition: 0.3s ease all;
+  font-size: 1.5rem;
 }
 .header__content__nav button:hover {
   border-color: var(--primary);
@@ -124,7 +124,6 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  font-size: 2rem;
   transition: 0.3s ease all;
   position: relative;
 }

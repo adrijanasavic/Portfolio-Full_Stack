@@ -18,49 +18,44 @@ function FormEditProject() {
 
   const navigate = useNavigate();
   const { id } = useParams();
-    useEffect(() => {
-      console.log(id)
-      getProjectById();
+  useEffect(() => {
+    console.log(id);
+    getProjectById();
   }, []);
 
   const getProjectById = async () => {
-      const response = await axios.get(`/project/${id}`);
-      console.log(response)
+    const response = await axios.get(`/project/${id}`);
+    console.log(response);
     setData(response.data);
-    
   };
-    
-  const updateProject = async (e) => {
-      e.preventDefault();
-      
-          axios.patch(`/project/${id}`, {
-              title: data.title,
-              description: data.description,
-              link: data.link,
-              github: data.github,
-              skill: data.skill,
-              picture: data.picture,
-          });
-          navigate("/projects");
-          
-      
-    };
 
-    const updateData = (event) => {
-        const newData = { ...data };
-        newData[event.target.name] = event.target.value;
-        setData(newData);
-    }
-    
-    const updateProjectFile = (event) => {
-        FileService.toBase64(event.target.files[0]).then((pictureString) => { 
-            const newData = { ...data };
-            newData[event.target.name] = pictureString;
-            setData(newData);
-        })
-         
-       
-    }
+  const updateProject = async (e) => {
+    e.preventDefault();
+
+    axios.patch(`/project/${id}`, {
+      title: data.title,
+      description: data.description,
+      link: data.link,
+      github: data.github,
+      skill: data.skill,
+      picture: data.picture,
+    });
+    navigate("/projects");
+  };
+
+  const updateData = (event) => {
+    const newData = { ...data };
+    newData[event.target.name] = event.target.value;
+    setData(newData);
+  };
+
+  const updateProjectFile = (event) => {
+    FileService.toBase64(event.target.files[0]).then((pictureString) => {
+      const newData = { ...data };
+      newData[event.target.name] = pictureString;
+      setData(newData);
+    });
+  };
 
   return (
     <form className="box" onSubmit={updateProject} method="post">
@@ -74,8 +69,7 @@ function FormEditProject() {
             name="title"
             placeholder=""
             required="required"
-                      onChange={updateData}
-                      
+            onChange={updateData}
           />
           <label htmlFor="title">Title</label>
           <i></i>
@@ -149,7 +143,7 @@ function FormEditProject() {
         </div>
 
         <div className="box__form--link">
-          <Link to="/dashboard">Back to Dashboarde</Link>
+          <Link to="/dashboard">Back to Dashboard</Link>
         </div>
         <input type="submit" value={"Send"} />
       </div>

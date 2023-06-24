@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setUser } from "../../redux/userSlice.js";
 
 export default function Navbar() {
   const user = useSelector((state) => state.userStore.user);
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    localStorage.hasOwnProperty("user") &&
+      dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
+  }, []);
   useEffect(() => {
     console.log(user);
   }, [user]);
