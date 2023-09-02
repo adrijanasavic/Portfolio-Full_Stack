@@ -7,7 +7,8 @@ const AboutMe = require("./models/aboutmeModel");
 const Projects = require("./models/projectsModel");
 const Qualifications = require("./models/qualificationsModel");
 const Users = require("./models/userModel");
-
+//mongodb+srv://adrijanajovicic:adrijana@cluster0.emwi5bs.mongodb.net/?retryWrites=true&w=majority
+//mongodb+srv://adrijana:adrijana@cluster0.hiccgzr.mongodb.net/?retryWrites=true&w=majority
 const app = express();
 
 const PORT = process.env.PORT;
@@ -107,15 +108,49 @@ mongoose.connect(MONGO_URL, (err) => {
 //     newData.save();
 // });
 
+app.delete("/qualification/:id", (req, res) => {
+  Qualifications.deleteOne({ _id: req.params.id })
+    .then((item) => {
+      Qualifications.find({}, (err, result) => {
+        res.send(result);
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
+app.patch("/qualification/:id", async (req, res) => {
+  try {
+    const updateQualification = await Qualifications.updateOne(
+      { _id: req.params.id },
+      { $set: req.body }
+    );
+    res.status(200).json(updateQualification);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+});
+
 app.post("/qualification", async (req, res) => {
-  let newProject = new Qualifications(req.body);
-  let addProject = await newProject.save();
-  if (addProject) {
+  let newQualification = new Qualifications(req.body);
+  let addQualification = await newQualification.save();
+  if (addQualification) {
     res.send("Added new qualification");
   } else {
     res.send("Didn't add new qualification");
   }
   console.log(req.body);
+});
+
+app.get("/qualification/:id", (req, res) => {
+  Qualifications.findOne({ _id: req.params.id })
+    .then((item) => res.json(item))
+    .catch((err) => console.log(err));
+});
+
+app.get("/qualifications", (req, res) => {
+  Qualifications.find({})
+    .then((item) => res.json(item))
+    .catch((err) => console.log(err));
 });
 
 app.delete("/project/:id", (req, res) => {
@@ -151,6 +186,18 @@ app.post("/project", async (req, res) => {
   console.log(req.body);
 });
 
+app.get("/project/:id", (req, res) => {
+  Projects.findOne({ _id: req.params.id })
+    .then((item) => res.json(item))
+    .catch((err) => console.log(err));
+});
+
+app.get("/projects", (req, res) => {
+  Projects.find({})
+    .then((item) => res.json(item))
+    .catch((err) => console.log(err));
+});
+
 app.post("/login", (req, res) => {
   const reqBody = req.body;
   console.log(req.body);
@@ -174,22 +221,6 @@ app.get("/users", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.get("/qualifications", (req, res) => {
-  Qualifications.find({})
-    .then((item) => res.json(item))
-    .catch((err) => console.log(err));
-});
-
-app.get("/project/:id", (req, res) => {
-  Projects.findOne({ _id: req.params.id })
-    .then((item) => res.json(item))
-    .catch((err) => console.log(err));
-});
-app.get("/projects", (req, res) => {
-  Projects.find({})
-    .then((item) => res.json(item))
-    .catch((err) => console.log(err));
-});
 
 app.get("/", (req, res) => {
   AboutMe.find({})
