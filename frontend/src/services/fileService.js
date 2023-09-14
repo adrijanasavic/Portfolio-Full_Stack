@@ -6,7 +6,6 @@ class FileService {
             fileReader.readAsDataURL(file)
             fileReader.onload = () => {
                 resolve(fileReader.result)
-                console.log(resolve(fileReader.result));
             }
             fileReader.onerror = () => {
                 reject(fileReader.error)
