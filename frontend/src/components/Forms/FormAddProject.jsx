@@ -47,14 +47,6 @@ function FormAddProject() {
         console.log(res.data);
       });
   })
-    // setData({
-    //   title: "",
-    //   description: "",
-    //   link: "",
-    //   github: "",
-    //   skill: "",
-    //   picture: "",
-    // });
     setData(dataInit);
     navigate("/projects")
   };
@@ -131,7 +123,6 @@ function FormAddProject() {
 
         <div className="box__form--input-box">
           <input
-            // style={{ display:"none"}}
             type="file"
             id="picture"
             name="picture"

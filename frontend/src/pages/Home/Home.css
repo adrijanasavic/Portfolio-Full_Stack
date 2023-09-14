@@ -35,7 +35,7 @@
   height: 150px;
 }
 .home-container .profile-details-name .highlighted-text {
-  color: #e5c764;
+  color: var(--primary);
 }
 .home-container .profile-details-role {
   display: flex;

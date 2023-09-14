@@ -44,8 +44,6 @@ function FormAddQualification() {
         console.log(res.data);
       });
     })
-
-  
     setData(dataInit);
     navigate("/qualifications")
   };
