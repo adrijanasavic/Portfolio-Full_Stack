@@ -11,6 +11,14 @@ export const routes = {
     name: "Qualification",
     path: "/qualification",
   },
+  EDITQUALIFICATION: {
+    name: "Qualification",
+    path: "/qualification/:id",
+  },
+  DELETEQUALIFICATION: {
+    name: "Qualification",
+    path: "/qualification/:id",
+  },
   PROJECTS: {
     name: "Projects",
     path: "/projects",

@@ -21,21 +21,26 @@
         font-size: 1rem;
         padding: 1rem;
         margin: 1rem;
-        background-color: var(--grey);
-        color: var(--white);
+        background-color: var(--white);
+        color: var(--primary) ;
         border-radius: 1rem;
         border: none;
         box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24),
             0 17px 50px 0 rgba(180, 180, 180, 0.19);
     }
-    .vertical-timeline-element-title{
+
+    .vertical-timeline-element-date {}
+
+    .vertical-timeline-element-title {
         color: var(--primary);
     }
-    .vertical-timeline-element-subtitle{
+
+    .vertical-timeline-element-subtitle {
         margin-top: 20px;
     }
-    .date{
+
+    .date {
         color: var(--white);
-       
+
     }
 }

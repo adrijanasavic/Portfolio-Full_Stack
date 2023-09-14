@@ -1,79 +1,90 @@
-import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom';
+import FileService from '../../services/fileService';
 import { Link } from "react-router-dom";
-import "./../../pages/Login/Login.css";
-import axios from "axios";
-import FileService from "../../services/fileService";
-import { useNavigate, useParams } from "react-router-dom";
 
 const dataInit = {
-  title: "",
+  date: "",
+  degree: "",
+  school: "",
   description: "",
-  link: "",
-  github: "",
-  skill: "",
-  picture: "",
+  keywords: "",
+  pdf: ""
 };
 
-function FormEditProject() {
+function FormEditQualification() {
   const [data, setData] = useState(dataInit);
 
   const navigate = useNavigate();
   const { id } = useParams();
-  
+
   useEffect(() => {
     console.log(id);
-    getProjectById();
-  }, []);
+    getQualificationById();
+  }, [])
 
-  const getProjectById = async () => {
-    const response = await axios.get(`/project/${id}`);
+  const getQualificationById = async () => {
+    const response = await axios.get(`/qualification/${id}`);
     console.log(response);
     setData(response.data);
-  };
+  }
 
-  const updateProject = async (e) => {
+  const updateQualification = async (e) => {
     e.preventDefault();
 
-    axios.patch(`/project/${id}`, {
-      title: data.title,
+    axios.patch(`/qualification/${id}`, {
+      data: data.date,
+      degree: data.degree,
+      school: data.school,
       description: data.description,
-      link: data.link,
-      github: data.github,
-      skill: data.skill,
-      picture: data.picture,
+      keywords: data.keywords,
+      pdf: data.pdf
     });
-    navigate("/projects");
-  };
+    navigate("/qualifications");
+  }
 
   const updateData = (event) => {
     const newData = { ...data };
     newData[event.target.name] = event.target.value;
     setData(newData);
-  };
+  }
 
-  const updateProjectFile = (event) => {
-    FileService.toBase64(event.target.files[0]).then((pictureString) => {
+  const updateQualificationFile = (event) => {
+    FileService.toBase64(event.target.files[0]).then((pdfString) => {
       const newData = { ...data };
-      newData[event.target.name] = pictureString;
+      newData[event.target.name] = pdfString;
       setData(newData);
-    });
-  };
-
+    })
+  }
   return (
-    <form className="box" onSubmit={updateProject} method="post">
+    <form className="box" onSubmit={updateQualification} method="post">
       <div className="box__form">
-        <h2>Edit project</h2>
+        <h2>Edit qualification</h2>
         <div className="box__form--input-box">
           <input
             type="text"
-            id="title"
-            value={data.title}
-            name="title"
+            id="degree"
+            value={data.degree}
+            name="degree"
             placeholder=""
             required="required"
             onChange={updateData}
           />
-          <label htmlFor="title">Title</label>
+          <label htmlFor="description">Degree</label>
+          <i></i>
+        </div>
+        <div className="box__form--input-box">
+          <input
+            type="text"
+            id="school"
+            value={data.school}
+            name="school"
+            placeholder=""
+            required="required"
+            onChange={updateData}
+          />
+          <label htmlFor="title">School</label>
           <i></i>
         </div>
         <div className="box__form--input-box">
@@ -83,7 +94,6 @@ function FormEditProject() {
             value={data.description}
             name="description"
             placeholder=""
-            required="required"
             onChange={updateData}
           />
           <label htmlFor="description">Description</label>
@@ -92,54 +102,41 @@ function FormEditProject() {
         <div className="box__form--input-box">
           <input
             type="text"
-            id="github"
-            value={data.github}
-            name="github"
+            id="keywords"
+            value={data.keywords}
+            name="keywords"
             placeholder=""
             required="required"
             onChange={updateData}
           />
-          <label htmlFor="description">Github</label>
+          <label htmlFor="description">keywords</label>
           <i></i>
         </div>
         <div className="box__form--input-box">
           <input
             type="text"
-            id="skill"
-            value={data.skill}
-            name="skill"
+            id="date"
+            value={data.date}
+            name="date"
             placeholder=""
             required="required"
             onChange={updateData}
           />
-          <label htmlFor="description">Skill</label>
+          <label htmlFor="description">Date</label>
           <i></i>
         </div>
-        <div className="box__form--input-box">
-          <input
-            type="text"
-            id="link"
-            value={data.link}
-            name="link"
-            placeholder=""
-            required="required"
-            onChange={updateData}
-          />
-          <label htmlFor="link">Link</label>
-          <i></i>
-        </div>
+      
 
         <div className="box__form--input-box">
           <input
-            // style={{ display:"none"}}
             type="file"
-            id="picture"
-            name="picture"
+            id="pdf"
+            name="pdf"
             placeholder=""
-            onInput={updateProjectFile}
+            onInput={updateQualificationFile}
           />
           <label htmlFor="pdf" type="file">
-            Picture
+            PDF
           </label>
           <i></i>
         </div>
@@ -150,7 +147,7 @@ function FormEditProject() {
         <input type="submit" value={"Send"} />
       </div>
     </form>
-  );
+  )
 }
 
-export default FormEditProject;
+export default FormEditQualification

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import FileService from "../../services/fileService";
 
@@ -14,6 +14,7 @@ const dataInit = {
 function FormAddQualification() {
 
   const [data, setData] = useState(dataInit);
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const newData = { ...data };
@@ -46,25 +47,13 @@ function FormAddQualification() {
 
   
     setData(dataInit);
+    navigate("/qualifications")
   };
 
   return (
     <form className="box" onSubmit={handleSubmit} method="post">
       <div className="box__form">
         <h2>New qualification</h2>
-        <div className="box__form--input-box">
-          <input
-            type="text"
-            id="date"
-            value={data.date}
-            name="date"
-            placeholder=""
-            required="required"
-            onInput={handleInputChange}
-          />
-          <label htmlFor="title">Date</label>
-          <i></i>
-        </div>
         <div className="box__form--input-box">
           <input
             type="text"
@@ -115,6 +104,19 @@ function FormAddQualification() {
             onInput={handleInputChange}
           />
           <label htmlFor="link">Keywords</label>
+          <i></i>
+        </div>
+        <div className="box__form--input-box">
+          <input
+            type="text"
+            id="date"
+            value={data.date}
+            name="date"
+            placeholder=""
+            required="required"
+            onInput={handleInputChange}
+          />
+          <label htmlFor="title">Date</label>
           <i></i>
         </div>
         <div className="box__form--input-box">

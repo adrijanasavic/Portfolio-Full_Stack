@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Dashboard.css";
+import Footer from "../../components/Footer/Footer";
 
 function Dashboard() {
   const [isShown, setIsShown] = useState(false);
@@ -15,21 +16,11 @@ function Dashboard() {
           <h1>Adrijana</h1>
         </a>
         <div className="toolbar">
-          <a href="/project">
-            <button className="btn btn--primary" onClick={handleClick}>
-              Add new project
-            </button>
-          </a>
-          <a href="/qualification">
-            <button className="btn btn--primary" onClick={handleClick}>
-              Add new qualification
-            </button>
-          </a>
+
           <a
             href="/login"
             className="logout"
-            onClick={()=> window.localStorage.clear()}
-          >
+            onClick={() => window.localStorage.clear()}>
             Log Out
           </a>
         </div>
@@ -53,18 +44,26 @@ function Dashboard() {
           </li>
         </ul>
       </nav>
+
       <main className="admin__main">
-        <h2>Dashboard</h2>
         <div className="dashboard">
           <div className="dashboard__item">
-            <div className="card">
-              <strong>41</strong> Foobars
-            </div>
+            <a href="/project">
+              <div className="card">
+                <div onClick={handleClick}>
+                  Add new project
+                </div>
+              </div>
+            </a>
           </div>
           <div className="dashboard__item">
-            <div className="card">
-              <strong>81.712</strong> Doohickeys
-            </div>
+            <a href="/qualification">
+              <div className="card">
+                <div className="" onClick={handleClick}>
+                  Add new qualification
+                </div>
+              </div>
+          </a>
           </div>
           <div className="dashboard__item dashboard__item--full">
             <div className="card">
@@ -85,19 +84,7 @@ function Dashboard() {
           </div>
         </div>
       </main>
-      <footer className="admin__footer">
-        <ul className="ticker">
-          <li className="ticker__item">A</li>
-          <li className="ticker__item">D</li>
-          <li className="ticker__item">R</li>
-          <li className="ticker__item">I</li>
-          <li className="ticker__item">J</li>
-          <li className="ticker__item">A</li>
-          <li className="ticker__item">N</li>
-          <li className="ticker__item">A</li>
-        </ul>
-        <span>&copy; 2023 Adrijana</span>
-      </footer>
+      <Footer/>
     </div>
   );
 }

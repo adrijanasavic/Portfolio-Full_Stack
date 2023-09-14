@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import React from "react";
 import "./Contact.css";
+import Footer from "../../components/Footer/Footer";
 
 function Contact() {
   const formRef = useRef();
@@ -135,6 +136,7 @@ function Contact() {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

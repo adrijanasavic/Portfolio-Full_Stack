@@ -1,120 +1,126 @@
-.home-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 740px;
-  object-fit: cover;
-  font-size: 1.5rem;
+.home {
+  padding-top: 100px;
+  font-size: 1.2rem;
 
-  .profile-container {
+  &-container {
     display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    height: 10%;
-    min-height: fit-content;
-    margin-top: 10px;
-  }
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 740px;
+    object-fit: cover;
+    font-size: 1.5rem;
 
-  .profile {
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-    padding-top: 100px;
-
-    &-details {
-      &-name {
-        margin-top: 50px;
-        font-family: "Poppins SemiBold";
-
-        .primary-text {
-          color: white;
-          height: 150px;
-        }
-
-        .highlighted-text {
-          color: #e5c764;
-        }
-      }
-
-      &-role {
-        display: flex;
-        flex-direction: column;
-        margin: 14px 0 24px 0;
-
-        h1 {
-          height: 60px;
-          font-family: "cursive";
-        }
-
-        .profile-role-tagline {
-          margin: 0;
-          font-family: "Poppins Light";
-        }
-      }
-
-      &-cv {
-        .btn-get {
-          font-size: 1.7rem;
-          font-weight: bold;
-          padding: 1rem;
-          margin: 0 3rem 1rem;
-          background-color: var(--primary);
-          color: var(--white);
-          border-radius: 1rem;
-          border: none;
-        }
-
-        .btn-get:hover {
-          font-size: 1.7rem;
-          font-weight: bold;
-          padding: 1rem;
-          margin: 0 3rem 1rem;
-          background-color: var(--white);
-          color: var(--primary);
-          border-radius: 1rem;
-          border: none;
-        }
-      }
+    .profile-container {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      height: 10%;
+      min-height: fit-content;
+      margin-top: 10px;
     }
 
-    &-picture {
-      display: flow-root;
+    .profile {
+      display: flex;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0px 20px 30px 0px var(--secondary);
-      border-radius: 60%;
-      height: 450px;
-      width: 350px;
-      margin: 20px;
+      color: aliceblue;
+      // padding-top: 100px;
 
-      &-background {
-        height: 100%;
-        width: 85%;
-        margin-left: 7%;
-        border-radius: 60%;
-        background-image: url("./../../assets/profilephoto.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
+      &-details {
+        &-name {
+          margin-top: 50px;
+          font-family: "Poppins SemiBold";
 
-      &-background:hover {
-        transform: scale(1.1);
-        transition: 1s ease-out;
-      }
-
-      .cols-icon {
-        margin: 20px 10px;
-
-        a {
-         
-          i {
-            margin: 0 4px;
-            color: var(--white);
+          .primary-text {
+            color: white;
+            height: 150px;
           }
-          i:hover {
+
+          .highlighted-text {
+            color: #e5c764;
+          }
+        }
+
+        &-role {
+          display: flex;
+          flex-direction: column;
+          margin: 14px 0 24px 0;
+
+          h1 {
+            height: 60px;
+            font-family: "cursive";
+          }
+
+          .profile-role-tagline {
+            margin: 60px 10px;
+            font-family: "Poppins Light";
+          }
+        }
+
+        &-cv {
+          .btn-get {
+            font-size: 1.7rem;
+            font-weight: bold;
+            padding: 1rem;
+            margin: 0 3rem 1rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 1rem;
+            border: none;
+          }
+
+          .btn-get:hover {
+            font-size: 1.7rem;
+            font-weight: bold;
+            padding: 1rem;
+            margin: 0 3rem 1rem;
+            background-color: var(--white);
             color: var(--primary);
+            border-radius: 1rem;
+            border: none;
+          }
+        }
+      }
+
+      &-picture {
+        display: flow-root;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 20px 30px 0px var(--secondary);
+        border-radius: 60%;
+        height: 450px;
+        width: 350px;
+        margin: 20px;
+
+        &-background {
+          height: 100%;
+          width: 85%;
+          margin-left: 7%;
+          border-radius: 60%;
+          background-image: url("./../../assets/profilephoto.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+
+        &-background:hover {
+          transform: scale(1.1);
+          transition: 1s ease-out;
+        }
+
+        .cols-icon {
+          margin: 20px 10px;
+
+          a {
+
+            i {
+              margin: 0 4px;
+              color: var(--white);
+            }
+
+            i:hover {
+              color: var(--primary);
+            }
           }
         }
       }

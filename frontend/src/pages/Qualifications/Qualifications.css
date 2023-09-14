@@ -19,8 +19,8 @@
   font-size: 1rem;
   padding: 1rem;
   margin: 1rem;
-  background-color: var(--grey);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--primary);
   border-radius: 1rem;
   border: none;
   box-shadow: 0 5px 16px 0 rgba(170, 170, 170, 0.24), 0 17px 50px 0 rgba(180, 180, 180, 0.19);

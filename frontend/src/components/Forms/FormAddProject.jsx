@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./../../pages/Login/Login.css";
 import axios from "axios";
 import FileService from "../../services/fileService";
@@ -15,6 +15,7 @@ const dataInit = {
 function FormAddProject() {
 
   const [data, setData] = useState(dataInit);
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const newData = { ...data };
@@ -32,7 +33,7 @@ function FormAddProject() {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    FileService.toBase64(data.picture).then((pdfString) => {
+    FileService.toBase64(data.picture).then((picture) => {
     axios
       .post("http://localhost:4000/project", {
         title: data.title,
@@ -40,20 +41,22 @@ function FormAddProject() {
         link: data.link,
         github: data.github,
         skill: data.skill,
-        picture: pdfString,
+        picture: picture,
       })
       .then((res) => {
         console.log(res.data);
       });
   })
-    setData({
-      title: "",
-      description: "",
-      link: "",
-      github: "",
-      skill: "",
-      picture: "",
-    });
+    // setData({
+    //   title: "",
+    //   description: "",
+    //   link: "",
+    //   github: "",
+    //   skill: "",
+    //   picture: "",
+    // });
+    setData(dataInit);
+    navigate("/projects")
   };
 
   return (

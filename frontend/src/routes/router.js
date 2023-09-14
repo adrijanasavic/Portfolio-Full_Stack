@@ -13,6 +13,7 @@ import { Navigate } from "react-router-dom";
 import FormAddProject from "../components/Forms/FormAddProject";
 import FormAddQualification from "../components/Forms/FormAddQualification";
 import FormEditProject from "../components/Forms/FormEditProject";
+import FormEditQualification from "../components/Forms/FormEditQualification";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: routes.QUALIFICATION.path,
         element: <FormAddQualification />,
+      },
+      {
+        path: routes.EDITQUALIFICATION.path,
+        element: <FormEditQualification />,
       },
       {
         path: routes.PROJECTS.path,

@@ -1,0 +1,11 @@
+.footer {
+  position: fixed;
+  text-align: center;
+  color: #4e5561;
+  background-color: var(--grey);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}/*# sourceMappingURL=Footer.css.map */
