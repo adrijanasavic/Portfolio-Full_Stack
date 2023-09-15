@@ -32,7 +32,7 @@ function FormAddQualification() {
     event.preventDefault();
     FileService.toBase64(data.pdf).then((pdfString) => {
       axios
-      .post("http://localhost:4000/qualification", {
+        .post("https://portfolio-backend-as.vercel.app/qualification", {
         date: data.date,
         degree: data.degree,
         school: data.school,

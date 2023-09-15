@@ -12,7 +12,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(false);
 
   const client = axios.create({
-    baseURL: "http://localhost:4000/projects",
+    baseURL: "https://portfolio-backend-as.vercel.app/projects",
   });
 
   useEffect(() => {

@@ -18,7 +18,7 @@ function Qualifications() {
   const navigate = useNavigate();
 
   const client = axios.create({
-    baseURL: "http://localhost:4000/qualifications",
+    baseURL: "https://portfolio-backend-as.vercel.app/qualifications",
   });
 
   useEffect(() => {

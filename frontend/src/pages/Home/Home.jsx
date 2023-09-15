@@ -11,7 +11,7 @@ function Home() {
   const [loading, setLoading] = useState(false);
 
   const client = axios.create({
-    baseURL: "http://localhost:4000/",
+    baseURL: "https://portfolio-backend-as.vercel.app/",
   });
 
   useEffect(() => {

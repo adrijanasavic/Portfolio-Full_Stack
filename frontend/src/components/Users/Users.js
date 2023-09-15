@@ -5,7 +5,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   const client = axios.create({
-    baseURL: "http://localhost:4000/users",
+    baseURL: "https://portfolio-backend-as.vercel.app/users",
   });
 
   useEffect(() => {

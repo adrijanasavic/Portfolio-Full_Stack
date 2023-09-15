@@ -24,7 +24,6 @@ function FormAddProject() {
     console.log(newData);
   };
 
-  // dodala
   const handleInputFile = (event) => {
     const newData = { ...data };
     newData[event.target.name] = event.target.files[0];
@@ -35,7 +34,7 @@ function FormAddProject() {
     event.preventDefault();
     FileService.toBase64(data.picture).then((picture) => {
     axios
-      .post("http://localhost:4000/project", {
+      .post("https://portfolio-backend-as.vercel.app/project", {
         title: data.title,
         description: data.description,
         link: data.link,

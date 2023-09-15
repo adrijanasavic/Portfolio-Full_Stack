@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import axios from "axios";
 
-axios.defaults.baseURL="http://localhost:4000";
+axios.defaults.baseURL ="https://portfolio-backend-as.vercel.app/";
 
 function App() {
   return (
