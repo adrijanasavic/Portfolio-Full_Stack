@@ -4,6 +4,7 @@ import "./Projects.css";
 import { Link, useNavigate } from "react-router-dom";
 import Spinner from "../../components/Spinner/Spinner";
 import Footer from "../../components/Footer/Footer";
+import { projects } from "../../data";
 
 export default function Projects() {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(false);
 
   const client = axios.create({
-    baseURL: "https://portfolio-backend-as.vercel.app/projects",
+    baseURL: "http://localhost:4000/projects",
   });
 
   useEffect(() => {
@@ -42,14 +43,14 @@ export default function Projects() {
         <Spinner />
       ) : (
         <div className="container">
-          {data.map((item, index) => {
+            {projects.map((item, index) => {
             return (
               <div className="card" key={index}>
                 <div className="card-image">
                   {item.picture ? (
                     <img src={item.picture} />
                   ) : (
-                    <img src="https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/reactt2_1200x303.png?sfvrsn=3ddeaf3b_2" />
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_71ksAtibBFpeRLd2oFjLf6DHWIuy4EUQKaIVrlZYFRW4hAalL6wHJFxqbO20x9WYFYQ" />
                   )}
                 </div>
                 <div className="card-text">
