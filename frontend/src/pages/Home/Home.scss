@@ -43,7 +43,7 @@
         &-role {
           display: flex;
           flex-direction: column;
-          margin: 14px 0 24px 0;
+          // margin: 14px 0 24px 0;
 
           h1 {
             height: 60px;
@@ -177,8 +177,9 @@
     justify-content: space-between;
   }
 
-  .profile-details {
-    margin: 25px 0 0;
+  .profile-details-cv{
+    // margin: 25px 0 0;
+    padding-bottom: 100px;
   }
 
   .profile-options .highlighted-btn {

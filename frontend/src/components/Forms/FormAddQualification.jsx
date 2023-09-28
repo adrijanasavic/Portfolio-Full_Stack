@@ -30,7 +30,6 @@ function FormAddQualification() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    FileService.toBase64(data.pdf).then((pdfString) => {
       axios
         .post("https://portfolio-backend-as.vercel.app/qualification", {
         date: data.date,
@@ -38,12 +37,12 @@ function FormAddQualification() {
         school: data.school,
         description: data.description,
         keywords: data.keywords,
-        pdf: pdfString,
+        pdf: data.pdf,
       })
       .then((res) => {
         console.log(res.data);
       });
-    })
+    
     setData(dataInit);
     navigate("/qualifications")
   };
@@ -117,18 +116,36 @@ function FormAddQualification() {
           <label htmlFor="title">Date</label>
           <i></i>
         </div>
+
+
         <div className="box__form--input-box">
           <input
+            type="text"
+            id="pdf"
+            value={data.pdf}
+            name="pdf"
+            placeholder=""
+            required="required"
+            onInput={handleInputChange}
+          />
+          <label htmlFor="pdf">Pdf</label>
+          <i></i>
+        </div>
+
+
+
+        {/* <div className="box__form--input-box">
+          <input
             // style={{ display:"none"}}
-            type="file"
+            type="text"
             id="pdf"
             name="pdf"
             placeholder=""
-            onInput={handleInputFile}
+            onInput={handleInputChange}
           />
           <label htmlFor="pdf" type="file" >PDF</label>
           <i></i>
-        </div>
+        </div> */}
 
         <div className="box__form--link">
           <Link to="/dashboard">Back to Dashboarde</Link>

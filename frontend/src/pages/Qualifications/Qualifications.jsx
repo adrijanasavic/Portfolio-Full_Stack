@@ -38,7 +38,7 @@ function Qualifications() {
 
   const deleteQualification = async (id) => {
     axios.delete(`/qualification/${id}`).then((res) => {
-      setData(res.data);
+      setData(res.data.reverse());
       navigate("/qualifications")
     });
   };
@@ -74,9 +74,9 @@ function Qualifications() {
                   <div>
                     <a
                       href={element.pdf}
-                      type="file"
-                      // target="_blank"
-                      // rel="noreferrer"
+                      // type="file"
+                      target="_blank"
+                      rel="noreferrer"
                       download={element.pdf}
                     >
                       <button className="edu_btn" rel="opener">

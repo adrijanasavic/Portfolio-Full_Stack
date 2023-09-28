@@ -6,7 +6,6 @@ const projects = [
         description: "Private swimming lessons",
         skill: ["React ", "NodeJS ", "MongoDB"],
         github: "https://github.com/adrijanasavic/frontend_swimming",
-        codepen: "",
         link: "https://frontend-swimming.vercel.app/",
     },
     {
@@ -16,7 +15,6 @@ const projects = [
         description: "My portfolio",
         skill: ["React ", "NodeJS ", "MongoDB"],
         github: "https://github.com/adrijanasavic/Portfolio-Full_Stack",
-        codepen: "",
         link: "",
     },
     {
@@ -26,7 +24,6 @@ const projects = [
         description: "Delivery and rental of houses",
         skill: ["React ", "NodeJS ", "MongoDB"],
         github: "https://github.com/adrijanasavic/House-Marketplace",
-        codepen: "",
         link: "https://house-marketplace-teal.vercel.app/",
     },
     {
@@ -36,7 +33,6 @@ const projects = [
         description: "CRUD app.",
         skill: ["React"],
         github: "https://github.com/adrijanasavic/Feedback-UI",
-        codepen: "",
         link: "https://feedback-app-react-as.netlify.app/",
     },
     {
@@ -46,7 +42,6 @@ const projects = [
         description: "Final project on a course at SmartInIT.",
         skill: ["Angular (TypeScript) ", "Firebase"],
         github: "https://github.com/adrijanasavic/MetalArt-Angular",
-        codepen: "",
         link: "https://metal-art-angular.netlify.app/",
     },
     {
@@ -56,7 +51,6 @@ const projects = [
         description: "The project made in Angular with API calls.",
         skill: ["Angular (TypeScript) ", "API"],
         github: "https://github.com/adrijanasavic/SpaceX-Land-Angular",
-        codepen: "",
         link: "https://spacex-land-angular.netlify.app/",
     },
     {
@@ -66,7 +60,6 @@ const projects = [
         description: "Project done during the course at SmartInIT.",
         skill: ["Angular (TypeScript) ", "Firebase"],
         github: "https://github.com/adrijanasavic/Shop-app-Angular",
-        codepen: "",
         link: "https://shop-app-angular.netlify.app/",
     },
     {
@@ -76,7 +69,6 @@ const projects = [
         description: "Project for the subject of Web programming",
         skill: ["HTML ", "LESS"],
         github: "https://github.com/adrijanasavic/Restaurant_LESS",
-        codepen: "",
         link: "https://drevna.netlify.app/",
     },
     {
@@ -86,7 +78,6 @@ const projects = [
         description: "Android app about sights, nature, culture, shopping malls and restaurants in my city.",
         skill: ["Java - Android"],
         github: "https://github.com/adrijanasavic/Novi-Sad",
-        codepen: "",
         link: "https://play.google.com/store/apps/details?id=com.ns.novi_sad",
     },
     {
@@ -96,7 +87,6 @@ const projects = [
         description: "Informing the public about events from all areas of life.",
         skill: ["Java - Android"],
         github: "https://github.com/adrijanasavic",
-        codepen: "",
         link: "https://play.google.com/store/apps/details?id=app.bp",
     },
     {

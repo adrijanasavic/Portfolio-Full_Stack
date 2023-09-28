@@ -57,6 +57,7 @@ function FormEditQualification() {
       setData(newData);
     })
   }
+  
   return (
     <form className="box" onSubmit={updateQualification} method="post">
       <div className="box__form">
@@ -129,15 +130,15 @@ function FormEditQualification() {
 
         <div className="box__form--input-box">
           <input
-            type="file"
+            type="text"
             id="pdf"
             name="pdf"
             placeholder=""
-            onInput={updateQualificationFile}
+            required="required"
+
+            onInput={updateData}
           />
-          <label htmlFor="pdf" type="file">
-            PDF
-          </label>
+          <label htmlFor="pdf">PDF</label>
           <i></i>
         </div>
 
