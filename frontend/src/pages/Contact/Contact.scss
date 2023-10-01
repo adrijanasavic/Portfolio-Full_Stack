@@ -1,6 +1,6 @@
 .contact {
 
-  padding-top: 130px;
+  padding-top: 105px;
   font-size: 1.2rem;
 
   &-container {
@@ -93,6 +93,9 @@
 @media screen and (max-width: 750px) {
   .contact-container-wrapper {
     flex-direction: column;
+  }
+  .c-info{
+    font-size: 1rem;
   }
 }
 

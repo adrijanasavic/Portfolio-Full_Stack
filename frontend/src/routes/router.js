@@ -14,6 +14,7 @@ import FormAddProject from "../components/Forms/FormAddProject";
 import FormAddQualification from "../components/Forms/FormAddQualification";
 import FormEditProject from "../components/Forms/FormEditProject";
 import FormEditQualification from "../components/Forms/FormEditQualification";
+import Skills from "../components/Skills/Skills";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: routes.EDITPROJECT.path,
         element: <FormEditProject />,
+      },
+      {
+        path: routes.SKILLS.path,
+        element: <Skills />,
       },
       {
         path: routes.CONTACT.path,

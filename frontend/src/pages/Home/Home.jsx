@@ -5,6 +5,7 @@ import cv from "./../../pdf/Adrijana_Savic_CV.pdf";
 import "./Home.css";
 import Spinner from "../../components/Spinner/Spinner";
 import Footer from "../../components/Footer/Footer";
+import Skills from "../../components/Skills/Skills";
 
 function Home() {
   const [data, setData] = useState([]);
@@ -95,9 +96,10 @@ function Home() {
                 </div>
               );
             })}
-            <Footer/>
+            <Footer />
           </div>
       )}
+
     </div>
   );
 }

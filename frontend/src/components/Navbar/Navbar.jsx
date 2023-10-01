@@ -80,6 +80,11 @@ export default function Navbar() {
                 Projects
               </Link>
             </li>
+            <li>
+              <Link to="/skills" onClick={menuToggleHandler}>
+                Skills
+              </Link>
+            </li>
           </ul>
           <Link to="/contact" onClick={menuToggleHandler}>
             <button>Contact</button>

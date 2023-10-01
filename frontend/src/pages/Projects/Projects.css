@@ -15,12 +15,19 @@
   flex-direction: column;
   width: 360px;
   margin: 20px;
+  box-shadow: var(--primary) 0px 20px 30px -10px;
 }
 .projects .container .card .fab {
   color: var(--white);
 }
+.projects .container .card .fab:hover {
+  color: var(--grey);
+}
 .projects .container .card .fas {
   color: var(--white);
+}
+.projects .container .card .fas:hover {
+  color: var(--grey);
 }
 .projects .container .card .card > div {
   box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);

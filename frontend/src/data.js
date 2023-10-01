@@ -1,3 +1,20 @@
+import imgHtml from "./assets/html.png";
+import imgCss from "./assets/css.png";
+import imgSass from "./assets/sass.png";
+import tailwind from "./assets/tailwind.png";
+import imgBootstrap from "./assets/bootstrap.png";
+import imgGit from "./assets/git.png";
+import imgGitHub from "./assets/gitHub.png";
+import imgJavascript from "./assets/javascript.png";
+import imgReact from "./assets/react.png";
+import angularTs from "./assets/angular.png";
+import imgRedux from "./assets/redux.png";
+import imgNode from "./assets/node.png";
+import imgMongo from "./assets/mongoDb.png";
+import imgPostman from "./assets/postman.webp";
+import java from "./assets/java.png";
+import sql from "./assets/sql.png";
+import php from "./assets/php.png"
 const projects = [
     {
         id: 1,
@@ -118,4 +135,77 @@ const projects = [
     },
 ];
 
-export { projects };
+const skills = [
+    {
+        image: imgHtml,
+        title: "HTML5"
+    },
+    {
+        image: imgCss,
+        title: "CSS3"
+    },
+    {
+        image: imgSass,
+        title: "SASS"
+    },
+    {
+        image: tailwind,
+        title: "Tailwind"
+    },
+    {
+        image: imgBootstrap,
+        title: "Bootstrap"
+    },
+    {
+        image: imgJavascript,
+        title: "JavaScript"
+    },
+    {
+        image: imgReact,
+        title: "React JS"
+    },
+    {
+        image: imgRedux,
+        title: "Redux"
+    },
+    {
+        image: angularTs,
+        title: "Angular TS"
+    },
+    {
+        image: java,
+        title: "Android"
+    },
+    {
+        image: imgNode,
+        title: "Node JS"
+    },
+    {
+        image: imgMongo,
+        title: "Mongo DB"
+    },
+    {
+        image: sql,
+        title: "SQL"
+    },
+    {
+        image: php,
+        title: "PHP"
+    },
+    {
+        image: imgPostman,
+        title: "Postman"
+    },
+    {
+        image: imgGit,
+        title: "Git"
+    },
+    {
+        image: imgGitHub,
+        title: "GitHub"
+    },
+ 
+  
+  
+]
+export { projects, skills };

@@ -31,6 +31,10 @@ export const routes = {
     name: "EditProject",
     path: "/project/:id",
   },
+  SKILLS: {
+    name: "Skills",
+    path: "/skills",
+  },
   CONTACT: {
     name: "Contact",
     path: "/contact",
