@@ -23,7 +23,7 @@ const projects = [
         description: "Private swimming lessons",
         skill: ["React ", "NodeJS ", "MongoDB"],
         github: "https://github.com/adrijanasavic/frontend_swimming",
-        link: "https://frontend-swimming.vercel.app/",
+        link: "https://casoviplivanjanovisad.com/",
     },
     {
         id: 2,
@@ -99,6 +99,15 @@ const projects = [
     },
     {
         id: 10,
+        picture: "./images/casoviplivanja.jpg",
+        title: "Swimming",
+        description: "Android app for private swimming lessons.",
+        skill: ["Java - Android"],
+        github: "https://github.com/adrijanasavic/swimming_app",
+        link: "https://play.google.com/store/apps/details?id=com.as.casovi_plivanja",
+    },
+    {
+        id: 11,
         picture: "./images/bap.jpg",
         title: "BAP Vesti",
         description: "Informing the public about events from all areas of life.",
@@ -107,7 +116,7 @@ const projects = [
         link: "https://play.google.com/store/apps/details?id=app.bp",
     },
     {
-        id: 11,
+        id: 12,
         picture: "",
         title: "Final test at FTN",
         description: "Final test at FTN Informatics. Successfully passed with 77%",
@@ -116,7 +125,7 @@ const projects = [
         link: "https://www.youtube.com/watch?v=bTNHdx3LFXs&ab_channel=AdrijanaJovicicSavic",
     },
     {
-        id: 12,
+        id: 13,
         picture: "",
         title: "Movies and Actors",
         description: "Android app using rest Api.",
@@ -125,7 +134,7 @@ const projects = [
         link: "https://www.youtube.com/watch?v=bBN0-0FToLc&ab_channel=AdrijanaJovicicSavic",
     },
     {
-        id: 13,
+        id: 14,
         picture: "",
         title: "Dental app",
         description: "Android app for scheduling reviews.",
@@ -204,8 +213,8 @@ const skills = [
         image: imgGitHub,
         title: "GitHub"
     },
- 
-  
-  
+
+
+
 ]
 export { projects, skills };

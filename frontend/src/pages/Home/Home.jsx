@@ -54,7 +54,7 @@ function Home() {
                               steps={[
                                 "Web Developer ",
                                 1000,
-                                "Adroid Developer ",
+                                "Android Developer ",
                                 1000,
                               ]}
                             />
